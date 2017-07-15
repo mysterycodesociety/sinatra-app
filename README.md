@@ -31,3 +31,5 @@ Now that you're reay to get started.
 1. [Run server](./serve_your_data.md)
 1. [Create layouts](./create_layouts.md)
 1. [Set up a restful route](./create_restful_route.md)
+1. [Add hearts to tweets](./hearting_tweets.md)
+1. [Handle errors](./handling_errors.md)
