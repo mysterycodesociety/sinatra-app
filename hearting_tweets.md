@@ -52,7 +52,7 @@ We would also like to allow the user to heart something when they are looking at
 <% @user.tweets.each do |tweet| %>
   <li>
     <%= tweet.content %> at <%= tweet.date %> with <%= tweet.hearts.count %> hearts
-    <form method="POST" action="/heart">
+    <form method="POST" action="/hearts">
       <p>Your Email: <input type="email" name="email" required=true></p>
       <input type="hidden" name="tweet_id" value="<%= tweet.id %>">
       <input type="submit" value="Heart">
