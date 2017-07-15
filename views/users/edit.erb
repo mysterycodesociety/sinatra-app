@@ -2,11 +2,11 @@
 
 <form method="POST" action="/users/<%= @user.id %>">
   <input type="hidden" name="_method" value="PUT">
-  <label for="name">
+  <label for="name">Name</label>
   <input name="name" type="text" required=true value="<%= @user.name %>">
-  <label for="salutation">
+  <label for="salutation">Salutation</label>
   <input name="salutation" type="text" required=true value="<%= @user.salutation %>">
-  <label for="email">
+  <label for="email">Email</label>
   <input name="email" type="email" required=true value="<%= @user.email %>">
   <input type="submit">
 </form>

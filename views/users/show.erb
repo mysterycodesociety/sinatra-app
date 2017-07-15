@@ -3,10 +3,16 @@
 
 <% @user.tweets.each do |tweet| %>
   <li>
-    <a href="/users/<%= @user.id %>/tweets/<%= tweet.id %>"><%= tweet.content %> at <%= tweet.date %></a>
+    <a href="/users/<%= @user.id %>/tweets/<%= tweet.id %>"><%= tweet.content %> at <%= tweet.date %> with <%= tweet.hearts.count %> Hearts</a>
     <form method="POST" action="/users/<%= @user.id %>/tweets/<%= tweet.id %>">
       <input type="hidden" name="_method" value="DELETE" >
       <input type="submit" value="DELETE">
+    </form>
+
+    <form method="POST" action="/hearts">
+      <p>Your Email: <input type="email" name="email" required=true></p>
+      <input type="hidden" name="tweet_id" value="<%= tweet.id %>">
+      <input type="submit" value="Heart">
     </form>
   </li>
 <% end %>
