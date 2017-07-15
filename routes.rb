@@ -12,7 +12,11 @@ get '/users' do
 end
 
 get '/users/:id' do
+<<<<<<< HEAD
   id = params[:id]
+=======
+  id = params[:id].to_i
+>>>>>>> Adds status after serve_your_data
   @user = User.find(id)
   "Hello, #{@user.salutation}"
 end
