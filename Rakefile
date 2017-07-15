@@ -9,7 +9,7 @@ namespace :db do
   
   desc "Set up the Cloud 9 environment"
   task :setupC9 do
-    db_config       = YAML::load(File.open('./config/database.yml'))
+    db_config       = YAML::load(File.open('./config/database.yml'))["development"]
     db_config_admin = db_config.merge({'database' => 'postgres', 'schema_search_path' => 'public'})
     ActiveRecord::Base.establish_connection(db_config_admin)
     # template1 is what activerecord uses to make new databases
