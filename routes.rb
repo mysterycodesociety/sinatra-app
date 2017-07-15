@@ -5,6 +5,7 @@ end
 get '/users' do
   @users = User.all
   erb :"users/index"
+<<<<<<< HEAD
 end
 
 get '/users/new' do
@@ -16,12 +17,15 @@ post '/users' do
   # params => { name: "cora", email: "t@t.com", salutation: "hi there!" }
   @user = User.create(name: params["name"], email: params["email"], salutation: params["salutation"])
   redirect to("users/#{@user.id}")
+=======
+>>>>>>> Adds status of create_layouts
 end
 
 get '/users/:id' do
   id = params[:id]
   @user = User.find(id)
   erb :"users/show"
+<<<<<<< HEAD
 end
 
 get '/users/:id/edit' do
@@ -107,3 +111,6 @@ delete '/users/:user_id/tweets/:id' do
   @tweet.destroy
   redirect to("/users/#{@user.id}")
 end
+=======
+end
+>>>>>>> Adds status of create_layouts
