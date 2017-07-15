@@ -1,14 +1,16 @@
 ## Handling Errors
 
-We've seen already how active record handles validations and creates an Errors object with messages about the errors.
+We've seen already how ActiveRecord handles validations and prevents bad records from being saved.  It also lets you know what the errors were, by creating an Errors object with messages about the errors, when you call `.erorrs` on the object.
 
-If the user tried to post back data that had an error on it, a good user experience would be to re-generate the form and display the error, so that the user can try again.
+But what happens if the object failed to save when the user posted it back to the server?  How do we let the user know what happened?
 
-Currently, our routes save the data and redirect.  Now we only want to redirect if it's true.  If it's false, we want to re-generate the form with the same model and display the errors.
+It would be nice if we could: 1) let the user know the erorr occurred; 2) display the error message; 3) let the user try again (saving where they started).
 
-### Errors on the user model
+## Errors on a new user
 
-`@user.save`, @ and `@user.update(params)` will return `true` if it saved successfully and will return `false` if the save was not successful.
+Currently, when a new user is created, our routes save the record and redirect to the show page.  Now we would like to alter the code so that we only redirect if it's true.  If it's false, we want to re-generate the form with the same model/data and display the errors.
+
+The ActiveRecord commands `.save` and `.update` will return `true` if the record was saved successfully and will return `false` if the save was not successful.  That's useful as we determine if we should continue.  Let's change the logic in our routes to handle this scenario.  The condition we use can literally be the `.save` event.
 
 ```
 get '/users/new' do
@@ -22,7 +24,7 @@ end
 post '/users' do
   @user = User.new(params)
   
-  if @user.save
+  if @user.save  # user.save returns a true if successful or false if not
 
     # if it saved, go to user's show page
     redirect "/users/#{@user.id}"
@@ -38,7 +40,9 @@ end
 
 ```
 
-Then in your `users/new.erb` file, add a display for the errors above your form so the user can see them.  Make sure the default values of your inputs are set to the `@user`'s attributes.  This will mean if they submit wrong, they can see their old answers and the errors.  But if it's the first time, all the attributes and errors are nil.  
+Then in your `users/new.erb` file, add a display for the errors above your form so the user can see them.  
+
+Notice that the value on the inputs are set to the `@user`'s attributes.  This will mean if the user submits wrong, they can see their old answers and the errors.  But if it's the first time, all the attributes and errors are nil.  
 
 Yay!
 
@@ -58,4 +62,5 @@ Yay!
 
 
 ### Errors on Tweets and Hearts
+
 Go back through your forms and add error messaging.

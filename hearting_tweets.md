@@ -1,6 +1,6 @@
 ## Many to Many Relationships
 
-Twitter not only allows users to create tweets - it allows other users to heart tweeets.
+Twitter not only allows users to create tweets - it allows other users to heart tweets.
 
 ```
 A tweet has many hearts.
