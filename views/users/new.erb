@@ -1,11 +1,15 @@
 <h2>Create a new user</h2>
 
+<% @user.errors.full_messages.each do |error| %>
+  <p style="color:red;"><%= error %></p>
+<% end %>
+
 <form method="POST" action="/users">
   <label for="name">Name</label>
-  <input name="name" id="name" type="text" required=true>
+  <input name="name" id="name" type="text" required=true value="<%= @user.name %>">
   <label for="salutation">Salutation</label>
-  <input name="salutation" id="salutation" type="text" required=true>
+  <input name="salutation" id="salutation" type="text" required=true value="<%= @user.salutation %>">
   <label for="email">Email</label>
-  <input name="email" id="email" type="email" required=true>
+  <input name="email" id="email" type="email" required=true value="<%= @user.email %>">
   <input type="submit">
 </form>

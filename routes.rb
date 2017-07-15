@@ -14,8 +14,12 @@ end
 
 post '/users' do
   # params => { name: "cora", email: "t@t.com", salutation: "hi there!" }
-  @user = User.create(name: params["name"], email: params["email"], salutation: params["salutation"])
-  redirect to("users/#{@user.id}")
+  @user = User.new(name: params["name"], email: params["email"], salutation: params["salutation"])
+  if @user.save
+    redirect to("users/#{@user.id}")
+  else
+    erb :"users/new"
+  end
 end
 
 get '/users/:id' do
@@ -35,8 +39,11 @@ put '/users/:id' do
   @user = User.find(id)
   # params => { id: "1", name: "cora", email: "t@t.com", salutation: "hi there!" }
 
-  @user.update(name: params["name"], email: params["email"], salutation: params["salutation"])
-  redirect to("users/#{@user.id}")
+  if @user.update(name: params["name"], email: params["email"], salutation: params["salutation"])
+    redirect to("users/#{@user.id}")
+  else
+    erb :"users/edit"
+  end
 end
 
 delete '/users/:id' do
@@ -66,8 +73,12 @@ post '/users/:user_id/tweets' do
   user_id = params[:user_id]
   @user = User.find(user_id)
   # params => { content: "cora" }
-  @tweet = Tweet.create(content: params["content"], date: Date.today, user: @user)
-  redirect to("users/#{@user.id}")
+  @tweet = Tweet.new(content: params["content"], date: Date.today, user: @user)
+  if @tweet.save
+    redirect to("users/#{@user.id}")
+  else
+    erb :"tweets/new"
+  end
 end
 
 get '/users/:user_id/tweets/:id' do
@@ -94,8 +105,11 @@ put '/users/:user_id/tweets/:id' do
   @tweet = Tweet.find(id)
 
   # params => { id: "1", name: "cora", email: "t@t.com", salutation: "hi there!" }
-  @tweet.update(content: params["content"], date: Date.today)
-  redirect to("users/#{@user.id}")
+  if @tweet.update(content: params["content"], date: Date.today)
+    redirect to("users/#{@user.id}")
+  else
+    erb :"tweets/edit"
+  end
 end
 
 delete '/users/:user_id/tweets/:id' do

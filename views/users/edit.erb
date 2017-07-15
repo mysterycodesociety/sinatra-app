@@ -1,5 +1,9 @@
 <h2>Update user</h2>
 
+<% @user.errors.full_messages.each do |error| %>
+  <p style="color:red;"><%= error %></p>
+<% end %>
+
 <form method="POST" action="/users/<%= @user.id %>">
   <input type="hidden" name="_method" value="PUT">
   <label for="name">Name</label>

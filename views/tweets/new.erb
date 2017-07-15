@@ -1,5 +1,11 @@
+<% @tweet.errors.full_messages.each do |error| %>
+  <p style="color:red;"><%= error %></p>
+<% end %>
+
+
 <form method="POST" action="/users/<%= @user.id %>/tweets">
   <textarea maxlength="140" name="content" rows=4>
+    <%= @tweet.content %>
   </textarea>
   <input type="submit">
 </form>
