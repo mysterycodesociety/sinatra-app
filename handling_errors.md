@@ -49,7 +49,7 @@ Yay!
 ```
 <% @user.errors.full_messages.each do |error| %>
   <p style="color:red;"><%= error %></p>
-<% %>
+<% end %>
 
 <form method="POST" action="/users">
   <input type="email" name="email" value="<%= @user.email %>">
