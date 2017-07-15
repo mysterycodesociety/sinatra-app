@@ -1,0 +1,9 @@
+<div>
+  <p>Content: <%= @tweet.content %></p>
+  <p>Date: <%= @tweet.date %></p>
+  <p>Author: <%= @tweet.user.name %></p>
+</div>
+
+<a href="/users/<%= @user.id %>/tweets/<%= @tweet.id %>/edit">Edit Tweet</a>
+
+<a href="/users/<%= @user.id %>">Back to User</a>

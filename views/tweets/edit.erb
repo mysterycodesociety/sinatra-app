@@ -1,0 +1,7 @@
+<form method="POST" action="/users/<%= @user.id %>/tweets/<%= @tweet.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <textarea maxlength="140" name="content" rows=4>
+    <%= @tweet.content %>
+  </textarea>
+  <input type="submit">
+</form>

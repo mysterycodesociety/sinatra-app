@@ -1,8 +1,17 @@
 <h2>Hi, <%= @user.salutation %> </h2>
 <ul>
+
 <% @user.tweets.each do |tweet| %>
-  <li><%= tweet.content %> at <%= tweet.date %></li>
+  <li>
+    <a href="/users/<%= @user.id %>/tweets/<%= tweet.id %>"><%= tweet.content %> at <%= tweet.date %></a>
+    <form method="POST" action="/users/<%= @user.id %>/tweets/<%= tweet.id %>">
+      <input type="hidden" name="_method" value="DELETE" >
+      <input type="submit" value="DELETE">
+    </form>
+  </li>
 <% end %>
 </ul>
 
-<a href="/users"> Link to users</a>
+<a href="/users/<%= @user.id %>/tweets/new">New Tweet</a>
+<a href="/users/<%= @user.id %>/edit">Edit user</a>
+<a href="/users">Return to users</a>
