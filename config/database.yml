@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: sinatra_dev
+  pool: 2
+  username:
+  password: 
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: sinatra_production
+  pool: 2
+  username:
+  password:
