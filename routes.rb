@@ -8,15 +8,7 @@ get '/users' do
 end
 
 get '/users/:id' do
-<<<<<<< HEAD
-<<<<<<< HEAD
-  id = params[:id]
-=======
   id = params[:id].to_i
->>>>>>> Adds status after serve_your_data
-=======
-  id = params[:id]
->>>>>>> Updates to match master
   @user = User.find(id)
   erb :"users/show"
 end
