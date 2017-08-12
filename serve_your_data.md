@@ -168,20 +168,5 @@ get '/users/:id' do
 end
 ```
 
-If you tried this, you probably notice it doesn't work.  Why not?  Well, the secret is in data types.  You might have noticed when we inspected params using pry, that the value of `params[:id]` was `"1"`.  Which is a string.
-
-But the `User.find()` method expects an integer.  We need to convert the `params[:id]` into an integer first.
-
-
-```
-# routes.rb - continued
-
-get '/users/:id' do
-  id = params[:id].to_i
-  @user = User.find(id)
-  "Hello, #{@user.salutation}"
-end
-```
-
 Now it should work!
 
