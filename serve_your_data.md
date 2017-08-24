@@ -32,7 +32,7 @@ Let's see it in action.
 In terminal, type in the following command and notice the output.  Follow the link provided by Cloud 9 to get to your domain.
 
 ```
- $ ruby ./app.rb -p $PORT -o $IP
+ $ rake serve
  =>
  == Sinatra (v2.0.0) has taken the stage on 4567 for development with backup from Puma
 Puma starting in single mode...
@@ -43,7 +43,7 @@ Puma starting in single mode...
 Use Ctrl-C to stop
 ```
 
-Now change the end of your server to `/hello`.
+Now add `/hello` to the end of the url.
 
 You should have an empty web page that says "Hello world!"
 

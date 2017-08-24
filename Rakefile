@@ -6,7 +6,7 @@ namespace :db do
   task :load_config do
     require "./app"
   end
-  
+
   desc "Set up the Cloud 9 environment"
   task :setupC9 do
     db_config       = YAML::load(File.open('./config/database.yml'))["development"]
@@ -30,17 +30,30 @@ namespace :db do
     puts "Cloud9 setup."
   end
 end
-  
 
+desc "Start the server."
+task :serve, [:port, :ip] do |t, args|
+  host = ENV['C9_HOSTNAME'] || "localhost"
+  port = args.port || ENV['PORT'] || "4567"
+  ip = args.ip || ENV['IP'] || nil
 
-task :default do 
-  options = { 
-              "rake -T": "Will list all other rake tasks.",
+  puts "Start server: http(s)://#{host}:#{port}/"
+  if ip
+    sh "ruby ./app.rb -p #{port} -o #{ip}"
+  else
+    sh "ruby ./app.rb -p #{port}"
+  end
+end
+
+task :default do
+  options = {
+              "rake -T": "Will list all other rake tasks",
+              "rake serve": "Will run Sinatra server",
               "rake db:setupC9": "Will set up cloud 9",
               "rake db:create": "Will create a database",
-              "rake db:migrate": "Will run migrations", 
+              "rake db:migrate": "Will run migrations",
               "rake db:drop": "Will drop the database",
-              "rake db:create_migration": "Will create a migration" 
+              "rake db:create_migration": "Will create a migration"
             }
   options.each do |h, v|
     puts "#{h}: #{v}"

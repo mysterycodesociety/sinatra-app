@@ -2,18 +2,15 @@ Test to see if you have your rake commands by typing: `rake` into terminal.
 
 ```
  $ rake
-=> 
-  rake -T: Will list all other rake tasks.
+=>
+  rake -T: Will list all other rake tasks
+  rake serve: Will run Sinatra server
   rake db:setupC9: Will set up your Cloud 9 workspace
   rake db:create: Will create a database
   rake db:migrate: Will run migrations
   rake db:drop: Will drop the database
   rake db:create_migration: Will create a migration
-```
-
-Start postgres services.
-```
- $ sudo service postgresql start
+  rake serve: Will run
 ```
 
 Test postgres is working.
@@ -39,6 +36,6 @@ Check that you can connect to your database using `irb`.
 ```
  $ irb
 2.3.1 :002 > require './app.rb'
- => true 
+ => true
 2.3.1 :007 > exit
 ```
