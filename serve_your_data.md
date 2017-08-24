@@ -28,7 +28,7 @@ This is telling Sinatra that if it gets the request '/hello' with the verb 'get'
 
 Let's see it in action.
 
-1. Run a sinatra server.  
+1. Run a sinatra server.
 In terminal, type in the following command and notice the output.  Follow the link provided by Cloud 9 to get to your domain.
 
 ```

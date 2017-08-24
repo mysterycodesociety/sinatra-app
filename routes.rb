@@ -126,7 +126,7 @@ end
 
 post '/hearts' do
   @user = User.find_by(email: params[:email])
-  @tweet = Tweet.find(params[:tweet_id].to_i)
+  @tweet = Tweet.find(params[:tweet_id])
   @heart = Heart.create(user: @user, tweet: @tweet)
   redirect to("/users/#{@user.id}")
 end
