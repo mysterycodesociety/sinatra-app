@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-
-gem "sinatra-activerecord"
-gem "pg"
-gem "rake"
-gem "pry"
+gem "sinatra-activerecord", '~> 2.0.13'
+gem 'pg',                   '~> 0.18.4'
+gem 'rake',                 '~> 12.3', '>= 12.3.1'
+gem 'pry',                  '~> 0.11.3'

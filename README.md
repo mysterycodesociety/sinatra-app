@@ -25,7 +25,7 @@ Follow the steps below to set up your environment.
  $ sudo service postgresql start
 ```
 
-Now that you're reay to get started.
+Now that you're ready to get started.
 
 
 1. [Set up Cloud 9](./set_up.md) (If you have done this already for active record, you can skip.)
