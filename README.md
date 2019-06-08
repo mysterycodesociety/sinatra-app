@@ -16,19 +16,14 @@ Follow the steps below to set up your environment.
 
 1. Log into GitHub and fork this repo to your own account.
 1. Click the clone or download link and copy the ssh clone name.  (Toggle between https and ssh until you see Clone with ssh indicator.)
-1. Log into Cloud 9.
-1. In the root of your Cloud 9 workspace, open a terminal window and type `git clone ` and then paste the name of the repo you copied.  It might look like `git clone git@github.com:Gmfholley/sinatra-app.git`.
+1. In a folder on your computer, open the Windows command prompt and type `git clone ` and then paste the name of the repo you copied.  It might look like `git clone git@github.com:Gmfholley/sinatra-app.git`.
 1. Change your directory into the folder you just made: `cd sinatra-app`.
 1. `bundle install` to install all the files for this repo.
-1. Start postgres services.  NOTE: You will need to do this every day.
-```
- $ sudo service postgresql start
-```
+1. Type `gem install bundler` if you get an error typing  `bundle install`. After it is installed retry `bundle install`. If you get an error saying you need a different version, copy and paste the command stating the version you need to run the install.
 
 Now that you're ready to get started.
 
-
-1. [Set up Cloud 9](./set_up.md) (If you have done this already for active record, you can skip.)
+1. [Test your setup](./set_up.md)
 1. [Set up Models](./set_up_models.md)
 1. [Add validations](./add_validations.md)
 1. [Run server](./serve_your_data.md)
