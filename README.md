@@ -23,7 +23,6 @@ Follow the steps below to set up your environment.
 1. Type `gem install bundler` to install the Ruby bundler gem.
 1. Type `bundle install` to install all the gems for this repo.
     1. If you get a message regarding updating bundler or another gem, run the command given to you for upgrading, e.g.: `bundle update --bundler`.
-    1. Rerun `bundle install`
 
 Now that you're ready to get started.
 
