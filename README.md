@@ -19,7 +19,7 @@ Follow the steps below to set up your environment.
 1. In a folder on your computer, open the Windows command prompt and type `git clone ` and then paste the name of the repo you copied.  It might look like `git clone git@github.com:Gmfholley/sinatra-app.git`.
 1. Change your directory into the folder you just made: `cd sinatra-app`.
 1. At the prompt type `ruby --version ` to ensure Ruby is installed.
-    1. If you get an error that states Ruby is not found, you will need to (install Ruby)[https://rubyinstaller.org/downloads/]. You must be an administrator on the computer to install Ruby. In general, download the recommeded Ruby version on the page. Once installed, reopen your command prompt.
+    1. If you get an error that states Ruby is not found, you will need to [install Ruby](https://rubyinstaller.org/downloads/). You must be an administrator on the computer to install Ruby. In general, download the recommeded Ruby version on the page. Once installed, reopen your command prompt.
 1. Type `gem install bundler` to install the Ruby bundler gem.
 1. Type `bundle install` to install all the gems for this repo.
     1. If you get a message regarding updating bundler or another gem, run the command given to you for upgrading, e.g.: `bundle update --bundler`.
