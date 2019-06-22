@@ -13,7 +13,7 @@ Type `rake` into terminal to get the rake commands.  Find the command that creat
  $ rake
 => 
   rake -T: Will list all other rake tasks.
-  rake db:setupC9: Will set up your Cloud 9 workspace
+  rake db:setupMCS: Will set up your Cloud 9 workspace
   rake db:create: Will create a database
   rake db:migrate: Will run migrations
   rake db:drop: Will drop the database

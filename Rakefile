@@ -7,8 +7,8 @@ namespace :db do
     require "./app"
   end
 
-  desc "Set up the Cloud 9 environment"
-  task :setupC9 do
+  desc "Set up the MCS database environment"
+  task :setupMCS do
     db_config       = YAML::load(File.open('./config/database.yml'))["development"]
     db_config_admin = db_config.merge({'database' => 'postgres', 'schema_search_path' => 'public'})
     ActiveRecord::Base.establish_connection(db_config_admin)
@@ -27,7 +27,7 @@ namespace :db do
     sql.each do |s|
       ActiveRecord::Base.connection.execute(s)
     end
-    puts "Cloud9 setup."
+    puts "MCS database setup."
   end
 end
 
@@ -49,7 +49,7 @@ task :default do
   options = {
               "rake -T": "Will list all other rake tasks",
               "rake serve": "Will run Sinatra server",
-              "rake db:setupC9": "Will set up cloud 9",
+              "rake db:setupMCS": "Will set up the MCS database",
               "rake db:create": "Will create a database",
               "rake db:migrate": "Will run migrations",
               "rake db:drop": "Will drop the database",
