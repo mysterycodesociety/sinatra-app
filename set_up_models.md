@@ -13,7 +13,7 @@ Type `rake` into terminal to get the rake commands.  Find the command that creat
  $ rake
 => 
   rake -T: Will list all other rake tasks.
-  rake db:setupMCS: Will set up your Cloud 9 workspace
+  rake db:setupMCS: Will set up the MCS database
   rake db:create: Will create a database
   rake db:migrate: Will run migrations
   rake db:drop: Will drop the database
@@ -23,9 +23,9 @@ Type `rake` into terminal to get the rake commands.  Find the command that creat
 
 1. Let's create a migration for the Users table.
 
-Type `rake` into terminal to get the rake commands. Find the command for creating a migration and type it in.  (Remember that you typically need to name your migration.)
+Type `rake` into terminal to get the rake commands. Find the command for creating a migration and type it in.  (Remember that you typically need to name your migration, such as 'create_users' following the rake command.)
 
-1. Find the new migration file in the `db/migrate` folder and open it up.  It should look someting like below.
+1. Find the new migration file in the `db/migrate` folder and open it up.  If it opens and then immediately closes, then open it in your ide.  It should look someting like below.
 
 
 ```
@@ -36,7 +36,7 @@ end
 
 ```
 
-Now let's add the code we need to define the users table.  We know that there are three attributes for a user, name, salutation, and email.
+Now let's add the code we need to define the users table.  We know that there are three attributes for a user: name, salutation, and email.
 
 ```
 class CreateUsers < ActiveRecord::Migration[5.1]
