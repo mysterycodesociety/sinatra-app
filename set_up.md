@@ -33,7 +33,7 @@ Set up postgres. (Only needs to happen once.)
 ```
 
 
-Check that you can connect to your database using `irb`.
+Check that you can connect to your database using `irb`.  You may have to use Command Prompt instead of Git Bash for 'irb' commands.
 
 ```
  $ irb
