@@ -29,7 +29,7 @@ This is telling Sinatra that if it gets the request '/hello' with the verb 'get'
 Let's see it in action.
 
 1. Run a sinatra server.  
-In terminal, type in the following command and notice the output.  Follow the link provided by Cloud 9 to get to your domain.
+In terminal, type in the following command and notice the output.  Open your web browser and go to http://localhost:4567.
 
 ```
  $ rake serve
@@ -119,7 +119,7 @@ end
 
 ```
 
-Let's use a tool called `pry` that will allow us to stop code in the middle of executing so that we can play with ruby and inspect it.  It's something we would never use in production, but we can use it while we're developing.  Add a `binding.pry` line fo code inside that route.
+Let's use a tool called `pry` that will allow us to stop code in the middle of executing so that we can play with ruby and inspect it.  It's something we would never use in production, but we can use it while we're developing.  Add a `binding.pry` line of code inside that route.
 
 ```
 # routes.rb - continued
