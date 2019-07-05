@@ -39,7 +39,7 @@ To create a set of fully restful routes, you will need to create forms.  HTML fo
 
 ## Nested routes for tweets
 
-Now let's create a set of restful routes for tweets.  But because tweets belong to a user, the routes can be nested inside the route for a user, so you know who the tweet belongs to.
+Now let's create a second set of restful routes for tweets.  But because tweets belong to a user, the routes can be nested inside the route for a user, so you know who the tweet belongs to.
 
 Nested routes look similar to restful routes, but they are nested inside the routes of another model.
 
